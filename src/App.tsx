@@ -6,6 +6,7 @@ import { page } from "./constant/index";
 import Home from "./pages/Home";
 import Apply from "./pages/Apply";
 import Complete from "./pages/Complete";
+import SearchAddress from "./pages/SearchAddress";
 
 const GlobalContainer = styled.div`
   position: relative;
@@ -26,6 +27,7 @@ function App() {
       {route === page.HOME && <Home setRoute={setRoute} />}
       {route === page.APPLY && <Apply setRoute={setRoute} />}
       {route === page.COMPLETE && <Complete setRoute={setRoute} />}
+      {route === page.SEARCHADDRESS && <SearchAddress setRoute={setRoute} />}
     </GlobalContainer>
   );
 }
