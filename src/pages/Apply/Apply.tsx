@@ -14,6 +14,7 @@ function Apply({ setRoute }: ApplyProps) {
       {step === 2 && <div>두번째 스텝</div>}
       {step === 3 && <div>세번째 스텝</div>}
       {step === 4 && <div>네번째 스텝</div>}
+      {step === 5 && <div>다섯번째 스텝</div>}
     </ApplyTemplate>
   );
 }
