@@ -62,6 +62,8 @@ function RegisterAddress({ setRoute, setDisabled }: RegisterAddressProps) {
   const [covidTest, setCovidTest] = useState<string | null>(null);
   const dispatch = useApplicationDispatch();
 
+  // const apiKey: string = process.env.REACT_APP_ADDRESS_API_KEY as string;
+
   useEffect(() => {
     if (filterdAddr?.roadAddress && detailAddress && covidTest) {
       const tmpObj: Address = filterdAddr;
@@ -84,19 +86,18 @@ function RegisterAddress({ setRoute, setDisabled }: RegisterAddressProps) {
       sidoName: value.siNm,
       sigunguName: value.sggNm,
     };
-
     setFilterdAddr(filterdObj);
     setModalState(false);
   };
 
   async function getAddress(SearchValue: string) {
     try {
-      const response = await axios.get<RespAddr>("https://www.juso.go.kr/addrlink/addrLinkApi.do", {
+      const response = await axios.get<RespAddr>(process.env.REACT_APP_ADDRESS_URL as string, {
         params: {
           currentPage: 1,
           countPerPage: 10,
           keyword: SearchValue,
-          confmKey: "devU01TX0FVVEgyMDIyMDEyODIzMjIyNjExMjE5NjE=",
+          confmKey: process.env.REACT_APP_ADDRESS_API_KEY,
           resultType: "json",
         },
       });

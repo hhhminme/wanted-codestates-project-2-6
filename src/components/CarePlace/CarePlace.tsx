@@ -48,19 +48,19 @@ function CareType({ setDisabled }: { setDisabled: React.Dispatch<React.SetStateA
   const checkVailidity = () => {
     const isFilledDiagnose = diagnoseDetail !== "" || isDiagnosed ? 1 : 0;
 
-    console.log(targetGender, careGender, longtermLvl, isFilledDiagnose);
+    // console.log(targetGender, careGender, longtermLvl, isFilledDiagnose);
 
     if (selectPlace === 2) {
-      console.log("validate");
+      // console.log("validate");
       setDisabled(false);
     } else if (wantSurvice === 2) {
-      console.log("validate");
+      // console.log("validate");
       setDisabled(false);
     } else if (targetGender * careGender * longtermLvl * isFilledDiagnose) {
-      console.log("validate");
+      // console.log("validate");
       setDisabled(false);
     } else {
-      console.log("not yet");
+      // console.log("not yet");
       setDisabled(true);
     }
   };
